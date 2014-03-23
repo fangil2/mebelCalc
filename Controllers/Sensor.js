@@ -1,4 +1,4 @@
-define(function(){
+define(['Controllers/AddNewPanel'],function(AddNewPanel){
     var Mx,My, dMx,dMy,DIV = document.getElementById('container');
     var arrPeresekal=[];
     function countPeresekal(val){
@@ -37,8 +37,10 @@ define(function(){
         if (arrPeresekal.length==0){}
         if(orientacia=="горизонт"){
             console.log( orientacia+ "  :  "+ searchBortX(XL,XR,YT,YB)  );
+            AddNewPanel.add(orientacia, YT, searchBortX(XL,XR,YT,YB))
         }else{
             console.log( orientacia+ "  :  "+ searchBortY(XL,XR,YT,YB)  );
+            AddNewPanel.add(orientacia, XL, searchBortX(XL,XR,YT,YB))
         }
 
 

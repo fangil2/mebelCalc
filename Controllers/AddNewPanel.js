@@ -1,22 +1,37 @@
 define([
-    'Views/Show'
-],function(Show){
+    'Views/Show',
+    'Models/verKant',
+    'Models/horKant',
+    'Controllers/OgrankaTB'
+], function(Show,verKant,horKant,OgrankaTB){
 
-    function init(){
-        var Mx,My, dMx,dMy,DIV = document.getElementById('container');
+    function add(orientacia, XY, parent){
+        var obj, x, y,W, H,procent;
 
-        var fon = new Kinetic.Rect({
-            width: parseInt(DIV.style.width),
-            height: parseInt(DIV.style.height),
-            fill: '#eff'
-        });
-        fon.on('mousedown', function(evt) {
-            Mx=evt.x;
-            My=evt.y;
-        });
+        var name="PPP111"
+        var bort =OgrankaTB.bort(parent);
+
+        console.log(  "  bort = ",bort  );
+
+        if(orientacia=="горизонт"){
+            procent = (XY - bort.Y)/(bort.H-Tree.static.thickness)*100;
+            obj = horKant.creat(bort.X,bort.Y,bort.W,bort.H,procent,name);
+        }
+        if(orientacia=="вертикаль"){
+            console.log(  "  @вертикаль"  );
+            procent = (XY - bort.X)/(bort.W-Tree.static.thickness)*100;
+           // obj = verKant.add(bort.X,bort.Y,bort.W,bort.H,procent,name);
+            obj = verKant.creat(bort.X,bort.Y,bort.W,bort.H,procent,name);
+        }
+
+        console.log(  "  All = "+ All  );
+
+        All[name] = obj;
+        Show.newPanel(obj.group);
+
 
     }
     return{
-        init:init
+        add:add
     }
 })

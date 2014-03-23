@@ -35,23 +35,18 @@ define(function(){
             "verPanel": "100%",
             "parent":["p1","p2"]
         },
-        {
+      {
             "name":"p5",
             "verPanel": "80%",
             "parent":["p1","p2"]
         }
         ,
-        {
+   /*       {
             "name":"p6",
             "horPanel": "25%",
             "parent":["p3","p5"]
         }
 
-//        {
-//            "name":"p7",
-//            "verPanel": "20%",
-//            "parent":["p6","p2"]
-//        }
         ,
         {
             "name":"p8",
@@ -70,7 +65,7 @@ define(function(){
             "horPanel": "80%",
             "parent":["p8","p5"]
         }
-
+*/
 
 
     ];

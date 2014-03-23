@@ -1,8 +1,9 @@
 define( ['Controllers/Sensor'],function(Sensor){
 
-    function add(X,Y,W, moveH, procent,name){
+    function creat(X,Y,W, moveH, procent,name){
+        console.log(  "  (X,Y,W, moveH, procent,name) = ",X,Y,W, moveH, procent,name  );
         procent=parseFloat(procent);
-        if(isNaN(procent)) console.log(  "!!!Ошибка! расчет невозможен, procent = "+procent  );
+        if(isNaN(procent)) console.log(  "!!!Ошибка!  procent = "+procent  );
         var DDD={};
         DDD.X=X;
         DDD.Y=+((moveH-Tree.static.thickness)*procent/100).toFixed(1)+Y;
@@ -68,6 +69,6 @@ define( ['Controllers/Sensor'],function(Sensor){
       //  DDD.name = Tree.R[N].name
         return DDD
     }
-    return {add:add}
+    return {creat:creat}
 
 })

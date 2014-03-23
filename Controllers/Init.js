@@ -17,9 +17,9 @@ define([
             if(Tree.R[i].parent){
                 var bort =OgrankaTB.bort(Tree.R[i].parent);
                 if(Tree.R[i].horPanel){
-                    obj = horKant.add(bort.X,bort.Y,bort.W,bort.H,Tree.R[i].horPanel,name);
+                    obj = horKant.creat(bort.X,bort.Y,bort.W,bort.H,Tree.R[i].horPanel,name);
                 }else{
-                    obj = verKant.add(bort.X,bort.Y,bort.W,bort.H,Tree.R[i].verPanel,name);
+                    obj = verKant.creat(bort.X,bort.Y,bort.W,bort.H,Tree.R[i].verPanel,name);
                 }
             }else{
                 x=Tree.R[0].x;
@@ -28,9 +28,9 @@ define([
                 H=Tree.R[0].H;
 
                 if(Tree.R[i].horPanel){
-                    obj = verKant.add(x,y,W,H,Tree.R[i].horPanel,name);
+                    obj = verKant.creat(x,y,W,H,Tree.R[i].horPanel,name);
                 }else{
-                    obj = horKant.add(x,y,W,H,Tree.R[i].verPanel,name);
+                    obj = horKant.creat(x,y,W,H,Tree.R[i].verPanel,name);
                 }
             }
 
