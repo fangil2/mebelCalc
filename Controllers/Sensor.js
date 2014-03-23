@@ -20,6 +20,9 @@ define(['Controllers/AddNewPanel'],function(AddNewPanel){
     DIV.onmouseup =  function(evt){
         dMx=Math.abs(Mx-evt.x);
         dMy=Math.abs(My-evt.y);
+
+
+        console.log(  "  dMx = "+ dMx  );
         window.MOUSEDOWN=false;
         var orientacia = (dMx>dMy)?"горизонт":"вертикаль";
 
@@ -35,12 +38,16 @@ define(['Controllers/AddNewPanel'],function(AddNewPanel){
         if(YT>YB){tmp=YB; YB=YT; YT=tmp}
 
         if (arrPeresekal.length==0){}
+
+        if(dMx>=dMy && dMx<10)return null;
+        if(dMx<dMy && dMy<10)return null;
+
         if(orientacia=="горизонт"){
             console.log( orientacia+ "  :  "+ searchBortX(XL,XR,YT,YB)  );
             AddNewPanel.add(orientacia, YT, searchBortX(XL,XR,YT,YB))
         }else{
             console.log( orientacia+ "  :  "+ searchBortY(XL,XR,YT,YB)  );
-            AddNewPanel.add(orientacia, XL, searchBortX(XL,XR,YT,YB))
+            AddNewPanel.add(orientacia, XL, searchBortY(XL,XR,YT,YB))
         }
 
 

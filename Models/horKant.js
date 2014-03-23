@@ -1,7 +1,7 @@
 define( ['Controllers/Sensor'],function(Sensor){
 
     function creat(X,Y,W, moveH, procent,name){
-        console.log(  "  (X,Y,W, moveH, procent,name) = ",X,Y,W, moveH, procent,name  );
+       // console.log(  "  (X,Y,W, moveH, procent,name) = ",X,Y,W, moveH, procent,name  );
         procent=parseFloat(procent);
         if(isNaN(procent)) console.log(  "!!!Ошибка!  procent = "+procent  );
         var DDD={};

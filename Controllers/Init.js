@@ -2,8 +2,8 @@ define([
     'Views/Show',
     'Models/verKant',
     'Models/horKant',
-    'Controllers/OgrankaTB'
-], function(Show,verKant,horKant,OgrankaTB){
+    'Controllers/Ogranka'
+], function(Show,verKant,horKant,Ogranka){
     function start(){
 
         Show.addTools(); // кнопки - инструменты
@@ -15,7 +15,7 @@ define([
             var x, y,W, H,procent;
             var name = Tree.R[i].name;
             if(Tree.R[i].parent){
-                var bort =OgrankaTB.bort(Tree.R[i].parent);
+                var bort =Ogranka.bort(Tree.R[i].parent);
                 if(Tree.R[i].horPanel){
                     obj = horKant.creat(bort.X,bort.Y,bort.W,bort.H,Tree.R[i].horPanel,name);
                 }else{

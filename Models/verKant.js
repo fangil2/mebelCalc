@@ -1,7 +1,6 @@
 define( ['Controllers/Sensor'],function(Sensor){
 
     function creat(X,Y,moveW, H, procent,name){
-        console.log(  "  @ = "+ "33333"  );
         procent=parseFloat(procent);
         if(isNaN(procent)) console.log(  "!!!Ошибка! procent = "+procent  );
 

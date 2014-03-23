@@ -1,7 +1,7 @@
 define(function(){
     // возвращает границы области, по двум введенным ограничивающим объектам
     function bort(parent){
-
+console.log(  " ===========parentparent @ = "+ parent  );
         var obj1 = All[parent[0]];
         var obj2 = All[parent[1]];
         var ogranka =All[parent[0]].vid;// "hor"/"ver"
