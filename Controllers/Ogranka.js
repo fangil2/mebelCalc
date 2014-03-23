@@ -35,7 +35,7 @@ console.log(  " ===========parentparent @ = "+ parent  );
             }
         }
         if(ogranka=="ver"){
-            if(obj1.Y!=obj2.Y){
+            if(obj1.Y!=obj2.Y || obj1.H!=obj2.H){
                 var Y = (obj1.H<obj2.H)?obj1.Y:obj2.Y;
                 if(obj1.W<obj2.W){
                     var W = (obj1.W>obj2.W)?obj1.W:obj2.W;
