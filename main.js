@@ -12,6 +12,11 @@ require([
         Init.start();
     }
 
+    if(localStorage.Tree==undefined){
+        localStorage.Tree=JSON.stringify(Tree)
+    }
+
+
     window.init();
 
 })

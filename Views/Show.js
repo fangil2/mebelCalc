@@ -23,12 +23,11 @@ define(function(){
 
 
 
-    var KNOPKI = document.getElementById('container0');
-    KNOPKI.innerHTML='<button disabled onclick="PREV()">↶</button>'
-    KNOPKI.innerHTML+='<button disabled onclick="NEXT()">↷</button>'
-   // KNOPKI.innerHTML+='<button onclick="treeConsole()">Вычислить оставшееся поле</button>';
-    KNOPKI.innerHTML+='<button onclick="JSONconsole()">Показать весь JSON</button>'
-
+    var tools = document.getElementById('container0');
+    tools.innerHTML='<button disabled onclick="PREV()">↶</button>';
+    tools.innerHTML+='<button disabled onclick="NEXT()">↷</button>';
+    tools.innerHTML+='<button onclick="JSONconsole()">Показать весь JSON</button><br>';
+    tools.innerHTML+='W:<input value="33" size="1"/>H:<input value="33" size="1"/>Z:<input value="33" size="1"/>'
 
 
     return {
