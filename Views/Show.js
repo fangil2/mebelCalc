@@ -1,4 +1,4 @@
-define([],function(){
+define(function(){
 
     var DIV = document.getElementById('container');
     var stage = new Kinetic.Stage({
@@ -9,6 +9,10 @@ define([],function(){
 
     var layer = new Kinetic.Layer();
 
+    function clear(){
+        layer.removeChildren();
+        stage.add(layer);
+    }
     function newPanel(obj){
         layer.add(obj);
         stage.add(layer);
@@ -18,20 +22,18 @@ define([],function(){
     }
 
 
-    function addTools(){
-        var KNOPKI = document.getElementById('container0');
-        KNOPKI.innerHTML='<button disabled onclick="PREV()">↶</button>'
-        KNOPKI.innerHTML+='<button disabled onclick="NEXT()">↷</button>'
-       // KNOPKI.innerHTML+='<button onclick="treeConsole()">Вычислить оставшееся поле</button>';
-        KNOPKI.innerHTML+='<button onclick="JSONconsole()">Показать весь JSON</button>'
-    }
 
+    var KNOPKI = document.getElementById('container0');
+    KNOPKI.innerHTML='<button disabled onclick="PREV()">↶</button>'
+    KNOPKI.innerHTML+='<button disabled onclick="NEXT()">↷</button>'
+   // KNOPKI.innerHTML+='<button onclick="treeConsole()">Вычислить оставшееся поле</button>';
+    KNOPKI.innerHTML+='<button onclick="JSONconsole()">Показать весь JSON</button>'
 
 
 
     return {
         newPanel:newPanel,
         render:render,
-        addTools:addTools
+        clear:clear
     }
 })

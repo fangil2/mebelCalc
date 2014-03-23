@@ -6,13 +6,12 @@ define([
 ], function(Show,verKant,horKant,Ogranka){
     function start(){
 
-        Show.addTools(); // кнопки - инструменты
         window.All = {}; // все объекты динамично меняющие свои свойства
         var obj;
-
+        Show.clear();
         for(var i= 1; i< Tree.R.length; i++){
 
-            var x, y,W, H,procent;
+            var x, y,W, H;
             var name = Tree.R[i].name;
             if(Tree.R[i].parent){
                 var bort =Ogranka.bort(Tree.R[i].parent.split("|"));
@@ -34,21 +33,13 @@ define([
                 }
             }
 
-
             All[name] = obj;
             Show.newPanel(obj.group);
 
-
-
-
         }
 
-        //Show.newPanel(horKant.add(20.5,150,200,50,0))
-        //Show.newPanel(horKant.add(20.5,150,200,50,100))
-
-
-
     }
+
 
 
 

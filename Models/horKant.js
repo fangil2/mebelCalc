@@ -1,4 +1,4 @@
-define( ['Controllers/Sensor'],function(Sensor){
+define( ['Controllers/Sensor.js'],function(Sensor){
 
     function creat(X,Y,W, moveH, procent,name){
        // console.log(  "  (X,Y,W, moveH, procent,name) = ",X,Y,W, moveH, procent,name  );
@@ -45,13 +45,16 @@ define( ['Controllers/Sensor'],function(Sensor){
             opacity:0.5
         });
 
-
+        hand.on('mousedown', function() {
+            window.arrPeretaskival=name;
+        });
         hand.on('mouseover', function() {
             document.body.style.cursor = 'pointer';
             if(window.MOUSEDOWN){
-               try{
-                   Sensor.countPeresekal(name)
-               } catch (e){}
+//               try{
+//                   Sensor.countPeresekal(name)
+//               } catch (e){}
+                window.arrPeresekal.push(name)
             }
             if(window.CTRL){
                 console.log(  "  name = "+ name);

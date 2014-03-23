@@ -1,11 +1,10 @@
-define(['Controllers/AddNewPanel'],function(AddNewPanel){
+define([
+    'Controllers/AddNewPanel',
+    'Controllers/Change'
+],function(AddNewPanel,Change){
     var Mx,My, dMx,dMy,DIV = document.getElementById('container');
-    var arrPeresekal=[];
-    function countPeresekal(val){
-        console.log(  "  @ = "+ "wwww"  );
-        arrPeresekal.push(val);
-    }
-
+    window.arrPeresekal=[];
+    window.arrPeretaskival="";
     this.onkeydown=function(evt){
         window.CTRL=evt.ctrlKey;
     }
@@ -16,18 +15,30 @@ define(['Controllers/AddNewPanel'],function(AddNewPanel){
         Mx=evt.x;
         My=evt.y;
         window.MOUSEDOWN=true;
-        arrPeresekal=[]
+        window.arrPeresekal=[]
 
     };
     DIV.onmouseup =  function(evt){
         dMx=Math.abs(Mx-evt.x);
         dMy=Math.abs(My-evt.y);
-if(arrPeresekal.length!=0)return;
-if(document.body.style.cursor == 'pointer')return
-        console.log(  "  dMx = "+ dMx  );
+if(window.arrPeresekal.length!=0){
+    console.log(  "  удалить, разровнять панели = "+ window.arrPeresekal  );
+    return;
+}
+
         window.MOUSEDOWN=false;
         var orientacia = (dMx>dMy)?"горизонт":"вертикаль";
 
+
+        if(document.body.style.cursor == 'pointer'){
+            console.log(  "  перетаскивали = "+ window.arrPeretaskival  );
+            // обновляем дерево json и запускаем заново отрисовку всего
+            Change.render(orientacia, window.arrPeretaskival)
+
+
+            window.arrPeretaskival="";
+            return
+        }
 
         // Ищем, между какими панелями чиркнули
 
@@ -38,8 +49,6 @@ if(document.body.style.cursor == 'pointer')return
             tmp;
         if(XL>XR){tmp=XR; XR=XL; XL=tmp}
         if(YT>YB){tmp=YB; YB=YT; YT=tmp}
-
-        if (arrPeresekal.length==0){}
 
         if(dMx>=dMy && dMx<10)return null;
         if(dMx<dMy && dMy<10)return null;
@@ -79,7 +88,7 @@ if(document.body.style.cursor == 'pointer')return
         if(LN!=undefined && RN!=undefined)  return [RN, LN] ;
     }
     function searchBortY(XL,XR,YT,YB){      // ищем панели, к которым можно закрепиться  //Ищем ближайшего в сдвух сторон панелей
-        if (arrPeresekal.length>0) return;
+        if (window.arrPeresekal.length>0) return;
         var T=-Infinity,B=Infinity, TN, BN;
         for(var o in All){
             if(All[o].vid!="hor")continue;
@@ -98,7 +107,7 @@ if(document.body.style.cursor == 'pointer')return
     }
 
 
-    return{
+    /*return{
         countPeresekal:countPeresekal
-    }
+    }*/
 })

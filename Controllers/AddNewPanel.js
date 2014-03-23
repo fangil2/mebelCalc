@@ -1,7 +1,7 @@
 define([
     'Views/Show',
     'Models/verKant.js',
-    'Models/horKant',
+    'Models/horKant.js',
     'Controllers/Ogranka'
 ], function(Show,verKant,horKant,Ogranka){
 
@@ -24,19 +24,25 @@ define([
         obj = verKant.creat(bort.X,bort.Y,bort.W,bort.H,procent,name);
     }
 
-    // добавим ветки дереву
-    Tree.R.push(
-        {
-        "name":name,
-        "horPanel": procent.toFixed(0)+"%",
-        "parent":parent.join("|")
-        }
-    )
 
 
 
     All[name] = obj;
     Show.newPanel(obj.group);
+
+    // добавим ветки дереву
+    var d = Tree.R.push(
+        {
+            "name":name,
+            // "horPanel": procent.toFixed(0)+"%",
+            "parent":parent.join("|")
+        }
+    )
+    if(All[name].vid=="hor"){
+        Tree.R[d-1].horPanel = procent.toFixed(0)+"%"
+    }else{
+        Tree.R[d-1].verPanel = procent.toFixed(0)+"%"
+    }
 
 
     }

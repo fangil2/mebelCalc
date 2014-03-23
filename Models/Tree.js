@@ -45,27 +45,18 @@ define(function(){
             "name":"p6",
             "horPanel": "25%",
             "parent":"p3|p5"
+        },
+        {
+            "name": "p7",
+            "parent": "p6|p2",
+            "verPanel": "49%"
+        },
+        {
+            "name": "p8",
+            "parent": "p5|p7",
+            "horPanel": "41%"
         }
 
-        ,
-    /*      {
-            "name":"p8",
-            "verPanel": "80%",
-            "parent":["p6","p2"]
-        }
-        ,
-        {
-            "name":"p9",
-            "horPanel": "50%",
-            "parent":["p8","p5"]
-        }
-        ,
-        {
-            "name":"p10",
-            "horPanel": "80%",
-            "parent":["p8","p5"]
-        }
-*/
 
 
     ];

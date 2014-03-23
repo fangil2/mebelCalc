@@ -1,4 +1,4 @@
-define( ['Controllers/Sensor'],function(Sensor){
+define( ['Controllers/Sensor.js'],function(Sensor){
 
     function creat(X,Y,moveW, H, procent,name){
         procent=parseFloat(procent);
@@ -40,11 +40,14 @@ define( ['Controllers/Sensor'],function(Sensor){
             fill: "#ff9",
             opacity:0.5
         });
-       // this.name= Tree.R[N].name
+        hand.on('mousedown', function() {
+            window.arrPeretaskival=name;
+        });
         hand.on('mouseover', function() {
             document.body.style.cursor = 'pointer';
             if(window.MOUSEDOWN){
-                Sensor.countPeresekal(name)
+                //Sensor.countPeresekal(name)
+                window.arrPeresekal.push(name);
             }
             if(window.CTRL){
                 console.log(  "  name = "+ name);
