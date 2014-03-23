@@ -2,8 +2,10 @@ define(['Controllers/AddNewPanel'],function(AddNewPanel){
     var Mx,My, dMx,dMy,DIV = document.getElementById('container');
     var arrPeresekal=[];
     function countPeresekal(val){
+        console.log(  "  @ = "+ "wwww"  );
         arrPeresekal.push(val);
     }
+
     this.onkeydown=function(evt){
         window.CTRL=evt.ctrlKey;
     }
@@ -20,8 +22,8 @@ define(['Controllers/AddNewPanel'],function(AddNewPanel){
     DIV.onmouseup =  function(evt){
         dMx=Math.abs(Mx-evt.x);
         dMy=Math.abs(My-evt.y);
-
-
+if(arrPeresekal.length!=0)return;
+if(document.body.style.cursor == 'pointer')return
         console.log(  "  dMx = "+ dMx  );
         window.MOUSEDOWN=false;
         var orientacia = (dMx>dMy)?"горизонт":"вертикаль";

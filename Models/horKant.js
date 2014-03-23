@@ -49,7 +49,9 @@ define( ['Controllers/Sensor'],function(Sensor){
         hand.on('mouseover', function() {
             document.body.style.cursor = 'pointer';
             if(window.MOUSEDOWN){
-                Sensor.countPeresekal(name)
+               try{
+                   Sensor.countPeresekal(name)
+               } catch (e){}
             }
             if(window.CTRL){
                 console.log(  "  name = "+ name);
