@@ -15,7 +15,7 @@ define([
             var x, y,W, H,procent;
             var name = Tree.R[i].name;
             if(Tree.R[i].parent){
-                var bort =Ogranka.bort(Tree.R[i].parent);
+                var bort =Ogranka.bort(Tree.R[i].parent.split("|"));
                 if(Tree.R[i].horPanel){
                     obj = horKant.creat(bort.X,bort.Y,bort.W,bort.H,Tree.R[i].horPanel,name);
                 }else{

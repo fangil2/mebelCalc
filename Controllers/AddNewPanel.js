@@ -24,6 +24,16 @@ define([
         obj = verKant.creat(bort.X,bort.Y,bort.W,bort.H,procent,name);
     }
 
+    // добавим ветки дереву
+    Tree.R.push(
+        {
+        "name":name,
+        "horPanel": procent.toFixed(0)+"%",
+        "parent":parent.join("|")
+        }
+    )
+
+
 
     All[name] = obj;
     Show.newPanel(obj.group);

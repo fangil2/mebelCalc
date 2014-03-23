@@ -20,8 +20,8 @@ define([],function(){
 
     function addTools(){
         var KNOPKI = document.getElementById('container0');
-        KNOPKI.innerHTML='<button onclick="PREV()">↶</button>'
-        KNOPKI.innerHTML+='<button onclick="NEXT()">↷</button>'
+        KNOPKI.innerHTML='<button disabled onclick="PREV()">↶</button>'
+        KNOPKI.innerHTML+='<button disabled onclick="NEXT()">↷</button>'
        // KNOPKI.innerHTML+='<button onclick="treeConsole()">Вычислить оставшееся поле</button>';
         KNOPKI.innerHTML+='<button onclick="JSONconsole()">Показать весь JSON</button>'
     }

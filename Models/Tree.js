@@ -28,23 +28,23 @@ define(function(){
        {
             "name":"p3",
             "verPanel": "0%",
-            "parent":["p1","p2"]
+            "parent":"p1|p2"
         },
        {
             "name":"p4",
             "verPanel": "100%",
-            "parent":["p1","p2"]
+            "parent":"p1|p2"
         },
       {
             "name":"p5",
             "verPanel": "80%",
-            "parent":["p1","p2"]
+            "parent":"p1|p2"
         }
         ,
         {
             "name":"p6",
             "horPanel": "25%",
-            "parent":["p3","p5"]
+            "parent":"p3|p5"
         }
 
         ,
