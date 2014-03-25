@@ -17,7 +17,11 @@ define(function(){
             }
         }
     }
+    function delet(orientacia, name){
+
+    }
     return{
-        render:render
+        render:render,
+        delete:delet
     }
 })

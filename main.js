@@ -7,13 +7,17 @@ require([
 ],function(Init, Tree,JSONshow,Sensor){
 
 
-
+    Init.start();
     window.init = function (){
-        Init.start();
+        Init.renderPanels();
     }
 
     if(localStorage.Tree==undefined){
         localStorage.Tree=JSON.stringify(Tree)
+    }
+
+    window.gab = function (){ // изменение габаритов
+        Init.changeGabarits();
     }
 
 

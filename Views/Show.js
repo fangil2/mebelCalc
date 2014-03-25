@@ -26,8 +26,10 @@ define(function(){
     var tools = document.getElementById('container0');
     tools.innerHTML='<button disabled onclick="PREV()">↶</button>';
     tools.innerHTML+='<button disabled onclick="NEXT()">↷</button>';
-    tools.innerHTML+='<button onclick="JSONconsole()">Показать весь JSON</button><br>';
-    tools.innerHTML+='W:<input value="33" size="1"/>H:<input value="33" size="1"/>Z:<input value="33" size="1"/>'
+    tools.innerHTML+='<button onclick="JSONconsole()">Показать весь JSON</button>';
+    tools.innerHTML+='   ДСП, кв.м/р.:<input id="idDSP" value="102" size="1"/>';
+    tools.innerHTML+='Кромка, м/р.:<input id="ik" value="30" size="1"/><br>'
+    tools.innerHTML+='W:<input id="idW" value="33" onchange="gab()"  size="1"/>H:<input id="idH" onchange="gab()" value="33" size="1"/>Z:<input id="idZ" onchange="gab()" value="33" size="1"/>'
 
 
     return {

@@ -21,21 +21,19 @@ define([
     DIV.onmouseup =  function(evt){
         dMx=Math.abs(Mx-evt.x);
         dMy=Math.abs(My-evt.y);
-if(window.arrPeresekal.length!=0){
-    console.log(  "  удалить, разровнять панели = "+ window.arrPeresekal  );
-    return;
-}
+
 
         window.MOUSEDOWN=false;
         var orientacia = (dMx>dMy)?"горизонт":"вертикаль";
 
-
+        if(window.arrPeresekal.length!=0){
+            console.log(  "  удалить, разровнять панели = "+ window.arrPeresekal  );
+            Change.render(orientacia, window.arrPeresekal);
+            return;
+        }
         if(document.body.style.cursor == 'pointer'){
-            console.log(  "  перетаскивали = "+ window.arrPeretaskival  );
             // обновляем дерево json и запускаем заново отрисовку всего
-            Change.render(orientacia, window.arrPeretaskival)
-
-
+            Change.render(orientacia, window.arrPeretaskival);
             window.arrPeretaskival="";
             return
         }

@@ -4,7 +4,36 @@ define([
     'Models/horKant',
     'Controllers/Ogranka'
 ], function(Show,verKant,horKant,Ogranka){
-    function start(){
+    function start(){                   // Вычитаем если есть из localstorage записи, подготовим в пропорциях границы
+        document.getElementById("idW").value="180";
+        document.getElementById("idH").value="250";
+        document.getElementById("idZ").value="60";
+        changeGabarits();
+    }
+    function updateProportions(W,H){ // пропорции
+        var proporcia=1;
+        if (W/440 > H/320){
+            proporcia = W/440;
+            W=440; H=H/proporcia;
+        }else{
+            proporcia = H/320;
+            H=320; W=W/proporcia;
+        }
+        return {W:W, H:H, p:proporcia}
+    }
+    function changeGabarits(){      //если изменят значения перерисуем
+        var W = document.getElementById("idW").value;
+        var H = document.getElementById("idH").value;
+        var Z = document.getElementById("idZ").value;
+
+        var prop= updateProportions(W,H);
+
+        Tree.R[0].W=prop.W;
+        Tree.R[0].H=prop.H;
+        Tree.static.thickness = 5/prop.p;
+        renderPanels()
+    }
+    function renderPanels(){            // Отрисуем из дерева все панели
 
         window.All = {}; // все объекты динамично меняющие свои свойства
         var obj;
@@ -47,6 +76,8 @@ define([
 
 
     return{
-        start:start
+        start:start,
+        renderPanels:renderPanels,
+        changeGabarits:changeGabarits
     }
 })
