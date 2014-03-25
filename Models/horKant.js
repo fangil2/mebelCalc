@@ -10,6 +10,7 @@ define( ['Controllers/Sensor.js'],function(Sensor){
         DDD.W=W;
         DDD.H=moveH;
         DDD.vid = "hor";
+        DDD.dlina = W;
 
         DDD._top = 0;
         DDD._bottom = 0; // для ограничения потом будем использовать

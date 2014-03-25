@@ -7,7 +7,7 @@ define([
     function start(){                   // Вычитаем если есть из localstorage записи, подготовим в пропорциях границы
         document.getElementById("idW").value="180";
         document.getElementById("idH").value="250";
-        document.getElementById("idZ").value="60";
+        document.getElementById("idZ").value="50";
         changeGabarits();
     }
     function updateProportions(W,H){ // пропорции
@@ -26,12 +26,32 @@ define([
         var H = document.getElementById("idH").value;
         var Z = document.getElementById("idZ").value;
 
+
         var prop= updateProportions(W,H);
 
         Tree.R[0].W=prop.W;
         Tree.R[0].H=prop.H;
-        Tree.static.thickness = 5/prop.p;
-        renderPanels()
+        Tree.static.thickness = 1.6/prop.p;
+        renderPanels();
+        costCalculation();
+    }
+    function costCalculation(){ // расчет стоимости
+        var W = document.getElementById("idW").value;
+        var H = document.getElementById("idH").value;
+        var Z = document.getElementById("idZ").value;
+        var kromka = document.getElementById("idKromka").value;
+        var dsp = document.getElementById("idDSP").value;
+
+        var allKromka =0;
+        for(var o in All) allKromka+=All[o].dlina;
+
+
+        document.getElementById("Idsp").value=(allKromka*Z/1000).toFixed(2);;
+        var a = document.getElementById("IdspSum").value=(allKromka*Z*dsp/100).toFixed(2);
+        document.getElementById("Ikromka").value=(allKromka/100).toFixed(2);
+        var b = document.getElementById("IkromkaSum").value=(allKromka*kromka/100).toFixed(2);
+       document.getElementById("Itog").value=+a + +b;
+
     }
     function renderPanels(){            // Отрисуем из дерева все панели
 
@@ -66,7 +86,7 @@ define([
             Show.newPanel(obj.group);
 
         }
-
+        costCalculation();
     }
 
 

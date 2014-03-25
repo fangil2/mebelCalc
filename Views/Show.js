@@ -27,10 +27,18 @@ define(function(){
     tools.innerHTML='<button disabled onclick="PREV()">↶</button>';
     tools.innerHTML+='<button disabled onclick="NEXT()">↷</button>';
     tools.innerHTML+='<button onclick="JSONconsole()">Показать весь JSON</button>';
-    tools.innerHTML+='   ДСП, кв.м/р.:<input id="idDSP" value="102" size="1"/>';
-    tools.innerHTML+='Кромка, м/р.:<input id="ik" value="30" size="1"/><br>'
+    tools.innerHTML+='   ДСП, кв.м/р.:<input id="idDSP" onchange="gab()" value="3.2" size="1"/>';
+    tools.innerHTML+='Кромка, м/р.:<input id="idKromka" onchange="gab()" value="1.3" size="1"/><br>'
     tools.innerHTML+='W:<input id="idW" value="33" onchange="gab()"  size="1"/>H:<input id="idH" onchange="gab()" value="33" size="1"/>Z:<input id="idZ" onchange="gab()" value="33" size="1"/>'
 
+    var resultat = document.getElementById('resultat');
+    resultat.innerHTML='ДСП <input id="Idsp" size="4" style="border: none; text-align: right"/> кв.м.';
+    resultat.innerHTML+='<input id="IdspSum" size="4" style="border: none; text-align: right"/> руб.';
+
+    resultat.innerHTML+='<img width="40px">Кромка <input id="Ikromka" size="1" style="border: none; text-align: right"/> м.';
+    resultat.innerHTML+='<input id="IkromkaSum" size="4" style="border: none; text-align: right"/> руб.';
+
+    resultat.innerHTML+='<br>Итого боковые: <input id="Itog" size="4" style="border: none; text-align: right"/> руб.';
 
     return {
         newPanel:newPanel,

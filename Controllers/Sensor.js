@@ -1,7 +1,7 @@
 define([
     'Controllers/AddNewPanel',
-    'Controllers/Change'
-],function(AddNewPanel,Change){
+    'Controllers/MovePanel'
+],function(AddNewPanel,MovePanel){
     var Mx,My, dMx,dMy,DIV = document.getElementById('container');
     window.arrPeresekal=[];
     window.arrPeretaskival="";
@@ -28,12 +28,12 @@ define([
 
         if(window.arrPeresekal.length!=0){
             console.log(  "  удалить, разровнять панели = "+ window.arrPeresekal  );
-            Change.render(orientacia, window.arrPeresekal);
+            MovePanel.render(orientacia, window.arrPeresekal);
             return;
         }
         if(document.body.style.cursor == 'pointer'){
             // обновляем дерево json и запускаем заново отрисовку всего
-            Change.render(orientacia, window.arrPeretaskival);
+            MovePanel.render(orientacia, window.arrPeretaskival);
             window.arrPeretaskival="";
             return
         }

@@ -1,9 +1,8 @@
 define([
-    'Views/Show',
     'Models/verKant.js',
     'Models/horKant.js',
     'Controllers/Ogranka'
-], function(Show,verKant,horKant,Ogranka){
+], function(verKant,horKant,Ogranka){
 
     function add(orientacia, XY, parent){
         var obj, x, y,W, H,procent;
@@ -28,7 +27,8 @@ define([
 
 
     All[name] = obj;
-    Show.newPanel(obj.group);
+
+
 
     // добавим ветки дереву
     var d = Tree.R.push(
@@ -44,6 +44,8 @@ define([
         Tree.R[d-1].verPanel = procent.toFixed(0)+"%"
     }
 
+
+        gab();
 
     }
     return{

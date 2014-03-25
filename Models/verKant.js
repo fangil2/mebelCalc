@@ -10,6 +10,7 @@ define( ['Controllers/Sensor.js'],function(Sensor){
         DDD.W=moveW;
         DDD.H=H;
         DDD.vid = "ver";
+        DDD.dlina = H;
 
                var group = new Kinetic.Group({
             x:DDD.X,
