@@ -63,6 +63,8 @@ define([
             var x, y,W, H;
             var name = Tree.R[i].name;
             if(Tree.R[i].parent){
+                // проверка есть ли родители, иначе удаляем узел и игнорируем
+
                 var bort =Ogranka.bort(Tree.R[i].parent.split("|"));
                 if(Tree.R[i].horPanel){
                     obj = horKant.creat(bort.X,bort.Y,bort.W,bort.H,Tree.R[i].horPanel,name);

@@ -1,7 +1,7 @@
 define([
     'Controllers/AddNewPanel',
-    'Controllers/MovePanel'
-],function(AddNewPanel,MovePanel){
+    'Controllers/MoveDeletePanel'
+],function(AddNewPanel,MoveDeletePanel){
     var Mx,My, dMx,dMy,DIV = document.getElementById('container');
     window.arrPeresekal=[];
     window.arrPeretaskival="";
@@ -28,12 +28,12 @@ define([
 
         if(window.arrPeresekal.length!=0){
             console.log(  "  удалить, разровнять панели = "+ window.arrPeresekal  );
-            MovePanel.render(orientacia, window.arrPeresekal);
+            MoveDeletePanel.delete(window.arrPeresekal);
             return;
         }
         if(document.body.style.cursor == 'pointer'){
             // обновляем дерево json и запускаем заново отрисовку всего
-            MovePanel.render(orientacia, window.arrPeretaskival);
+            MoveDeletePanel.render(orientacia, window.arrPeretaskival);
             window.arrPeretaskival="";
             return
         }
@@ -62,10 +62,6 @@ define([
 
     }
 
-    function peresekal(){
-        // Их нужно в первую очередь засветить
-        // пересекавшие можно удалить, между ними добавить, или разровнять
-    }
 
     function searchBortX(XL,XR,YT,YB){      // ищем панели, к которым можно закрепиться  //Ищем ближайшего в сдвух сторон панелей
 
@@ -105,7 +101,4 @@ define([
     }
 
 
-    /*return{
-        countPeresekal:countPeresekal
-    }*/
 })
