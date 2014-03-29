@@ -45,7 +45,7 @@ define([
     }
 
 
-        gab();
+        reInit();
 
     }
     return{

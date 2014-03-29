@@ -24,12 +24,12 @@ define(function(){
 
 
     var tools = document.getElementById('container0');
-    tools.innerHTML='<button disabled onclick="PREV()">↶</button>';
-    tools.innerHTML+='<button disabled onclick="NEXT()">↷</button>';
+    tools.innerHTML='<button  onclick="window.PREV()">↶</button>';
+    tools.innerHTML+='<button  onclick="NEXT()">↷</button>';
     tools.innerHTML+='<button onclick="JSONconsole()">Показать весь JSON</button>';
-    tools.innerHTML+='   ДСП, кв.м/р.:<input id="idDSP" onchange="gab()" value="3.2" size="1"/>';
-    tools.innerHTML+='Кромка, м/р.:<input id="idKromka" onchange="gab()" value="1.3" size="1"/><br>'
-    tools.innerHTML+='W:<input id="idW" value="33" onchange="gab()"  size="1"/>H:<input id="idH" onchange="gab()" value="33" size="1"/>Z:<input id="idZ" onchange="gab()" value="33" size="1"/>'
+    tools.innerHTML+='   ДСП, кв.м/р.:<input id="idDSP" onchange="reInit()" value="3.2" size="1"/>';
+    tools.innerHTML+='Кромка, м/р.:<input id="idKromka" onchange="reInit()" value="1.3" size="1"/><br>'
+    tools.innerHTML+='W:<input id="idW" value="33" onchange="reInit()"  size="1"/>H:<input id="idH" onchange="reInit()" value="33" size="1"/>Z:<input id="idZ" onchange="reInit()" value="33" size="1"/>'
 
     var resultat = document.getElementById('resultat');
     resultat.innerHTML='ДСП <input id="Idsp" size="4" style="border: none; text-align: right"/> кв.м.';

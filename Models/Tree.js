@@ -35,7 +35,7 @@ define(function(){
             "verPanel": "100%",
             "parent":"p1|p2"
         },
-      {
+      /*{
             "name":"p5",
             "verPanel": "80%",
             "parent":"p1|p2"
@@ -55,7 +55,7 @@ define(function(){
             "name": "p8",
             "parent": "p5|p7",
             "horPanel": "41%"
-        }
+        }*/
 
 
 

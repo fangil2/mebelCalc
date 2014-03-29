@@ -27,7 +27,7 @@ define([
         var orientacia = (dMx>dMy)?"горизонт":"вертикаль";
 
         if(window.arrPeresekal.length!=0){
-            console.log(  "  удалить, разровнять панели = "+ window.arrPeresekal  );
+            //console.log(  "  удалить, разровнять панели = "+ window.arrPeresekal  );
             MoveDeletePanel.delete(window.arrPeresekal);
             return;
         }
@@ -52,10 +52,10 @@ define([
         if(dMx<dMy && dMy<10)return null;
 
         if(orientacia=="горизонт"){
-            console.log( orientacia+ "  :  "+ searchBortX(XL,XR,YT,YB)  );
+            //console.log( orientacia+ "  :  "+ searchBortX(XL,XR,YT,YB)  );
             AddNewPanel.add(orientacia, YT, searchBortX(XL,XR,YT,YB))
         }else{
-            console.log( orientacia+ "  :  "+ searchBortY(XL,XR,YT,YB)  );
+           // console.log( orientacia+ "  :  "+ searchBortY(XL,XR,YT,YB)  );
             AddNewPanel.add(orientacia, XL, searchBortY(XL,XR,YT,YB))
         }
 
