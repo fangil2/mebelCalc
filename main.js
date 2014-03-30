@@ -24,12 +24,17 @@ require([
         History.nextCurrent();
     }
 
+    window.newSave=function(){
+        History.setSaves();
+    }
+    window.openSave=function(val){
+        History.getSaves(val);
+    }
+
 
     window.reInit = function (his){ // изменение габаритов
        if(his==undefined)History.current();
-
-        Init.changeGabarits();
-       // console.log(  "                     Counter="+Counter );
+       Init.changeGabarits();
     }
 
     localStorage.setItem("TreeS","");
